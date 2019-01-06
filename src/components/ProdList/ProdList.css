@@ -1,0 +1,24 @@
+.ProdList-wrapper {
+  width: 900px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.ProdList-prodImg {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+} 
+
+.ProdList-prodName {
+  padding-bottom: 3px;
+}
+
+.ProdList-prodPrice {
+  color: #d83e17;
+}
