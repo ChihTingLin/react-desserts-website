@@ -18,7 +18,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "繽紛圈圈(綜合六入組)",
@@ -39,7 +40,8 @@
       "unit": {
         "text": "六個",
         "number": 6
-      }
+      },
+      "qty": 10
     },
     {
       "name": "巧克力圈圈",
@@ -59,7 +61,8 @@
       "unit": {
         "text": "ㄧ個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "糖霜圈圈",
@@ -78,7 +81,8 @@
       "unit": {
         "text": "ㄧ個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "巧克力碎片圈圈",
@@ -97,7 +101,112 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
+    },
+    {
+      "name": "繽紛圈圈(白色單入)",
+      "category": "doughnuts",
+      "image": "https://images.unsplash.com/photo-1472452049192-db15def0be25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1562&q=80",
+      "price": 40,
+      "ingredients": [
+        "牛奶",
+        "雞蛋",
+        "低筋麵粉",
+        "奶油",
+        "砂糖",
+        "白巧克力",
+        "糖珠"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "unit": {
+        "text": "一個",
+        "number": 1
+      },
+      "qty": 10
+    },
+    {
+      "name": "繽紛圈圈(綜合六入組)",
+      "category": "doughnuts",
+      "image": "https://images.unsplash.com/photo-1516919549054-e08258825f80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      "price": 220,
+      "ingredients": [
+        "牛奶",
+        "雞蛋",
+        "低筋麵粉",
+        "奶油",
+        "砂糖",
+        "白巧克力",
+        "糖珠",
+        "食用色素"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "unit": {
+        "text": "六個",
+        "number": 6
+      },
+      "qty": 10
+    },
+    {
+      "name": "巧克力圈圈",
+      "category": "doughnuts",
+      "image": "https://images.unsplash.com/photo-1530016910220-faf7fab2125c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+      "price": 40,
+      "ingredients": [
+        "牛奶",
+        "雞蛋",
+        "低筋麵粉",
+        "奶油",
+        "砂糖",
+        "巧克力",
+        "糖珠"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "unit": {
+        "text": "ㄧ個",
+        "number": 1
+      },
+      "qty": 10
+    },
+    {
+      "name": "糖霜圈圈",
+      "category": "doughnuts",
+      "image": "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      "price": 35,
+      "ingredients": [
+        "牛奶",
+        "雞蛋",
+        "低筋麵粉",
+        "奶油",
+        "砂糖",
+        "糖霜"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "unit": {
+        "text": "ㄧ個",
+        "number": 1
+      },
+      "qty": 10
+    },
+    {
+      "name": "巧克力碎片圈圈",
+      "category": "doughnuts",
+      "image": "https://images.unsplash.com/photo-1533136872-c5d7b7b800ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      "price": 40,
+      "ingredients": [
+        "牛奶",
+        "雞蛋",
+        "低筋麵粉",
+        "奶油",
+        "砂糖",
+        "巧克力"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "unit": {
+        "text": "一個",
+        "number": 1
+      },
+      "qty": 10
     }
   ],
   "macaroons": [
@@ -120,7 +229,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "薄荷馬卡龍",
@@ -141,7 +251,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "莓果馬卡龍",
@@ -162,7 +273,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "綜合馬卡龍(六入)",
@@ -185,7 +297,8 @@
       "unit": {
         "text": "六個",
         "number": 6
-      }
+      },
+      "qty": 10
     }
   ],
   "cookies": [
@@ -206,7 +319,8 @@
       "unit": {
         "text": "五片",
         "number": 5
-      }
+      },
+      "qty": 10
     },
     {
       "name": "牛奶餅乾",
@@ -224,7 +338,8 @@
       "unit": {
         "text": "五片",
         "number": 5
-      }
+      },
+      "qty": 10
     },
     {
       "name": "核桃堅果餅乾",
@@ -243,7 +358,8 @@
       "unit": {
         "text": "五片",
         "number": 5
-      }
+      },
+      "qty": 10
     },
     {
       "name": "糖霜餅乾",
@@ -264,7 +380,8 @@
       "unit": {
         "text": "五片",
         "number": 1
-      }
+      },
+      "qty": 10
     }
   ],
   "cupCakes": [
@@ -287,7 +404,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "原味鮮奶油杯子蛋糕",
@@ -306,7 +424,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "花朵杯子蛋糕",
@@ -326,7 +445,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     },
     {
       "name": "巧克力杯子蛋糕",
@@ -346,7 +466,8 @@
       "unit": {
         "text": "一個",
         "number": 1
-      }
+      },
+      "qty": 10
     }
   ]
 }
