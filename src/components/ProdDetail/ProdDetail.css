@@ -1,0 +1,52 @@
+.ProdDetail-wrapper {
+  display: flex;
+}
+
+.ProdDetail-image {
+  width: 500px;
+  height: 470px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.ProdDetail-description {
+  background-color: rgba(255,255,255,0.8);
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+}
+
+.ProdDetail-info {
+  width: 300px;
+  padding: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.ProdDetail-name {
+  font-size: 20px;
+}
+
+.ProdDetail-cat {
+  font-size: 12px;
+  padding: 0 5px;
+  margin: 10px 0;
+  border-radius: 3px;
+  border: 1px solid pink;
+  color: pink;
+}
+
+.ProdDetail-ingredients {
+  color: #333;
+  margin-top: 10px;
+}
+
+.ProdDetail-price {
+  position: absolute;
+  bottom: 0;
+}
+
+.ProdDetail-counter {
+  width: 30px;
+}

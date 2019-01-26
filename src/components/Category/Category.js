@@ -8,7 +8,7 @@ const Category = ({ list, activeIdx, onCategoryClick }) => {
         <CategoryBtn
           title={cat.title}
           isActive={activeIdx === idx}
-          image={cat.img}
+          image={cat.image}
           key={idx}
           onBtnClick={() => onCategoryClick(idx)}
         />

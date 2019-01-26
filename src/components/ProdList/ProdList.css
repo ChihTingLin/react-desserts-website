@@ -2,9 +2,13 @@
   width: 900px;
   margin: 0 auto;
   padding-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px,1fr));
+  row-gap: 30px;
+}
+
+.ProdList-prod {
+  text-align: center;
 }
 
 .ProdList-prodImg {
@@ -12,7 +16,7 @@
   height: 150px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
 } 
 
 .ProdList-prodName {
@@ -21,4 +25,9 @@
 
 .ProdList-prodPrice {
   color: #d83e17;
+}
+
+.ProdList-prodDetail {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
