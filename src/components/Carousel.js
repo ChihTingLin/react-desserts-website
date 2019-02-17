@@ -1,5 +1,4 @@
 import React from "react";
-import "./Carousel.css";
 
 const Carousel = ({ images, image, length, active, onDotClick }) => {
   const imgArr = [...Array(length)];

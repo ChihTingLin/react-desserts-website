@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProdList.css";
 
 const ProdList = ({ data, activeIdx, onProdClick }) => {
   return (

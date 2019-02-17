@@ -1,14 +1,14 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
-import Category from "../Category/Category";
-import ProdList from "../ProdList/ProdList";
-import Modal from "../Modal/Modal";
-import ProdDetail from "../ProdDetail/ProdDetail"
+import Carousel from "./Carousel";
+import Category from "./Category";
+import ProdList from "./ProdList";
+import Modal from "./Modal";
+import ProdDetail from "./ProdDetail"
+import ShoppingCart from "./ShoppingCart"
 
-import "./ProdPage.css";
-import prodMap from "../../static/prod-data.json"
-import carouselData from '../../static/carousel-data.json'
-import categoryData from '../../static/category-data.json'
+import prodMap from "../static/prod-data.json"
+import carouselData from '../static/carousel-data.json'
+import categoryData from '../static/category-data.json'
 
 class ProdPage extends React.Component {
   constructor() {
@@ -23,6 +23,9 @@ class ProdPage extends React.Component {
       prodList: {
         activeIdx: null
       },
+      shoppingCart: [
+
+      ],
       modalOpen: false,
       qtyCounter: 0
     };
@@ -53,11 +56,27 @@ class ProdPage extends React.Component {
     this.setState({ qtyCounter: qty += value })
   }
 
+  onAddToCartClick(prod) {
+    let cart = [...this.state.shoppingCart]
+    cart.push(prod)
+    this.setState({ shoppingCart: cart })
+    this.onCloseProdDetail()
+  }
+
+  resetQtyCounter() {
+    this.setState({qtyCounter: 0})
+  }
+
+  onCloseProdDetail() {
+    this.setState({modalOpen: false})
+    this.resetQtyCounter()
+  }
+
   renderProdDetail() {
     const cat = categoryData[this.state.category.activeIdx].name || categoryData[0].name
     const activeProd = this.state.prodList.activeIdx || 0
     const data = prodMap[cat][activeProd]
-    return <ProdDetail {...data} onCounterClick={(value) => this.onCounterClick(value)} counter={this.state.qtyCounter} />
+    return <ProdDetail {...data} onCounterClick={(value) => this.onCounterClick(value)} counter={this.state.qtyCounter} onAddToCartClick={(prod) => this.onAddToCartClick(prod)}/>
   }
 
   render() {
@@ -84,9 +103,10 @@ class ProdPage extends React.Component {
           activeIdx={this.state.prodList.activeIdx}
           onProdClick={(idx) => this.onProdClick(idx)}
         />
-        <Modal openModal={this.state.modalOpen} closeModal={() => this.setState({ ...this.state, modalOpen: false })}>
+        <Modal openModal={this.state.modalOpen} closeModal={this.onCloseProdDetail}>
           {this.state.prodList !== null && this.renderProdDetail()}
         </Modal>
+        <ShoppingCart/>
       </div>
     );
   }
