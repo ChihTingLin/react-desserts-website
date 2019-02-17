@@ -27,52 +27,74 @@ class ProdPage extends React.Component {
 
       ],
       modalOpen: false,
-      qtyCounter: 0
+      qtyCounter: 0,
+      cartOpen: false
     };
   }
 
-  onCarouselDotClick(idx) {
+  onCarouselDotClick = (idx) => {
     this.setState({
       carousel: { activeIdx: idx }
     });
   }
 
-  onCategoryClick(idx) {
+  onCategoryClick = (idx) => {
     this.setState({
       category: { activeIdx: idx }
     });
   }
 
-  onProdClick(idx) {
+  onProdClick = (idx) => {
     this.setState({
       prodList: { activeIdx: idx },
-      modalOpen: true
     })
+    this.toggleModal(true)
   }
 
-  onCounterClick(value) {
+  onCounterClick = (value) => {
     let qty = this.state.qtyCounter
     if (value < 0 && this.state.qtyCounter === 0) return
     this.setState({ qtyCounter: qty += value })
   }
 
-  onAddToCartClick(prod) {
+  onAddToCartClick = (prod) => {
     let cart = [...this.state.shoppingCart]
     cart.push(prod)
     this.setState({ shoppingCart: cart })
     this.onCloseProdDetail()
   }
 
-  resetQtyCounter() {
+  resetQtyCounter = () => {
     this.setState({qtyCounter: 0})
   }
 
-  onCloseProdDetail() {
-    this.setState({modalOpen: false})
+  toggleShoppingCart = () => {
+    this.setState({cartOpen: !this.state.cartOpen})
+  }
+
+  toggleModal = (open) => {
+    if(open) {
+      this.setState({modalOpen: true})
+    } else{
+      this.setState({modalOpen: false})
+    }
+  }
+
+  onCloseProdDetail = () => {
+    this.toggleModal(false)
     this.resetQtyCounter()
   }
 
-  renderProdDetail() {
+  onShoppingCartClick = () =>  {
+    this.toggleShoppingCart()
+  }
+
+  onPageClick = (e) => {
+    if(this.state.cartOpen) this.toggleShoppingCart()
+    if(this.state.modalOpen) this.toggleModal(false)
+  }
+
+  renderProdDetail = () => {
     const cat = categoryData[this.state.category.activeIdx].name || categoryData[0].name
     const activeProd = this.state.prodList.activeIdx || 0
     const data = prodMap[cat][activeProd]
@@ -106,7 +128,7 @@ class ProdPage extends React.Component {
         <Modal openModal={this.state.modalOpen} closeModal={this.onCloseProdDetail}>
           {this.state.prodList !== null && this.renderProdDetail()}
         </Modal>
-        <ShoppingCart/>
+        <ShoppingCart cartDetail={this.state.shoppingCart} cartOpen={this.state.cartOpen} onShoppingCartClick={this.onShoppingCartClick}/>
       </div>
     );
   }
