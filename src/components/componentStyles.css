@@ -310,7 +310,7 @@
   min-height: 100px;
   border: 1px solid pink;
   margin-top: 10px;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .ShoppingCart-brief > button {
@@ -336,4 +336,10 @@
 
 .ShoppingCart-hidden {
   display: none;
+}
+
+.ShoppingCart-remove {
+  padding: 0 5px;
+  background-color: pink;
+  color: white;
 }

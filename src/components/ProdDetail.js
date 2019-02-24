@@ -9,7 +9,7 @@ const ProdDetail = ({ name, category, image, price, ingredients, description, un
       <div className="ProdDetail-info">
         <div className="ProdDetail-name">{name}</div>
         <span className="ProdDetail-cat">{category}</span>
-        <div className="ProdDetail-ingredients">原料:<br />{ingredients.join('、')}</div>
+        <div className="ProdDetail-ingredients">原料:<br />{ingredients.length > 0 ? ingredients.join('、') : ''}</div>
         <div>{price}元 / {unit.text}</div>
         <Counter onCounterClick={(val) => onCounterClick(val)} count={counter}/>
         {counter * price !== 0 && (

@@ -23,12 +23,12 @@ class ProdPage extends React.Component {
       prodList: {
         activeIdx: null
       },
-      shoppingCart: [
-
-      ],
+      shoppingCart: {
+        items:[],
+        totalPrice: 0
+      },
       modalOpen: false,
-      qtyCounter: 0,
-      cartOpen: false
+      qtyCounter: 0
     };
   }
 
@@ -58,9 +58,10 @@ class ProdPage extends React.Component {
   }
 
   onAddToCartClick = (prod) => {
-    let cart = [...this.state.shoppingCart]
-    cart.push(prod)
-    this.setState({ shoppingCart: cart })
+    let newItems = [...this.state.shoppingCart.items]
+    newItems.push(prod)
+    const newTotal = this.state.shoppingCart.totalPrice + prod.total
+    this.setState({ shoppingCart: {items: newItems, totalPrice: newTotal} })
     this.onCloseProdDetail()
   }
 
@@ -94,6 +95,14 @@ class ProdPage extends React.Component {
     if(this.state.modalOpen) this.toggleModal(false)
   }
 
+  onRemoveItemClick = (idx) => {
+    let newItems = [...this.state.shoppingCart.items]
+    let newTotal = 0
+    newItems.splice(idx, 1)
+    newTotal = newItems.reduce((prev, curr) => prev + curr.total, 0)
+    this.setState({shoppingCart: {items: newItems, totalPrice: newTotal}})
+  }
+
   renderProdDetail = () => {
     const cat = categoryData[this.state.category.activeIdx].name || categoryData[0].name
     const activeProd = this.state.prodList.activeIdx || 0
@@ -106,10 +115,6 @@ class ProdPage extends React.Component {
       <div>
         <Carousel
           images={carouselData}
-          image={carouselData[this.state.carousel.activeIdx]}
-          length={carouselData.length}
-          active={this.state.carousel.activeIdx}
-          onDotClick={idx => this.onCarouselDotClick(idx)}
         />
         <div className="ProdPage-slogan">
           手工製作，傳遞幸福的甜點
@@ -128,7 +133,7 @@ class ProdPage extends React.Component {
         <Modal openModal={this.state.modalOpen} closeModal={this.onCloseProdDetail}>
           {this.state.prodList !== null && this.renderProdDetail()}
         </Modal>
-        <ShoppingCart cartDetail={this.state.shoppingCart} cartOpen={this.state.cartOpen} onShoppingCartClick={this.onShoppingCartClick}/>
+        <ShoppingCart cartDetail={this.state.shoppingCart} onRemoveItemClick={(idx) => this.onRemoveItemClick(idx)}/>
       </div>
     );
   }
