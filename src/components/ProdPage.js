@@ -11,8 +11,8 @@ import carouselData from '../static/carousel-data.json'
 import categoryData from '../static/category-data.json'
 
 class ProdPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       carousel: {
         activeIdx: 0
@@ -133,7 +133,7 @@ class ProdPage extends React.Component {
         <Modal openModal={this.state.modalOpen} closeModal={this.onCloseProdDetail}>
           {this.state.prodList !== null && this.renderProdDetail()}
         </Modal>
-        <ShoppingCart cartDetail={this.state.shoppingCart} onRemoveItemClick={(idx) => this.onRemoveItemClick(idx)}/>
+        <ShoppingCart cartDetail={this.state.shoppingCart} onRemoveItemClick={(idx) => this.onRemoveItemClick(idx)} onCheckoutClick={this.props.onCheckoutClick}/>
       </div>
     );
   }

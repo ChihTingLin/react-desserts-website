@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import cartIcon from '../static/images/shopping-cart.svg'
 
-const ShoppingCart = ({ cartDetail, onRemoveItemClick}) => {
+const ShoppingCart = ({ cartDetail, onRemoveItemClick, onCheckoutClick}) => {
   let [cartOpen, toggleCart] = useState(false)
-  const storeData = () => {
-    if(cartDetail.items.length > 0) {
-      localStorage.setItem('PURCHASE_LIST', JSON.stringify(cartDetail))
-    } 
+  const checkout = () => {
+    if(cartDetail.items.length === 0) return
+    localStorage.setItem('PURCHASE_LIST', JSON.stringify(cartDetail))
+    onCheckoutClick()  
   }
   return (
     <div className="ShoppingCart-wrapper">
@@ -28,7 +28,7 @@ const ShoppingCart = ({ cartDetail, onRemoveItemClick}) => {
               </div>
             ))}
               <div className="ShoppingCart-line">小計 {cartDetail.totalPrice} 元</div>
-              <button onClick={storeData}>結帳</button>
+              <button onClick={checkout}>結帳</button>
             </React.Fragment>
           )}
           {
