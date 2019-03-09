@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        {step === 'PROD_PAGE' && <ProdPage onCheckoutClick={() => setStep('CHECKOUT_PAGE')}/>}
-        {step === 'CHECKOUT_PAGE' && <CheckoutPage/>}
+        {step === 'PROD_PAGE' && <ProdPage onCheckoutClick={() => setStep('CHECKOUT_PAGE')} />}
+        {step === 'CHECKOUT_PAGE' && <CheckoutPage />}
       </Layout>
     </div>
   );

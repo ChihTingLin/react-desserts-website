@@ -1,3 +1,24 @@
+.btn-s {
+  background-color: pink;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 2px;
+  margin: 0 10px;
+}
+
+.btn-l {
+  background-color: pink;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.btn-gray {
+  background-color: #ccc;
+}
+
 /* Layout */
 .Layout-header {
   height: 50px;
@@ -15,6 +36,7 @@
 .Layout-container {
   min-height: 800px;
   background-color: #eee;
+  padding-top: 50px;
 }
 
 .Layout-footer {
@@ -342,4 +364,63 @@
   padding: 0 5px;
   background-color: pink;
   color: white;
+}
+
+.CheckoutPage-wrapper {
+  padding-top: 50px;
+}
+
+.CheckoutPage-stepWrapper {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 50px auto;
+}
+
+.CheckoutPage-step {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #aaa;
+  margin: 0 20px;
+}
+
+.CheckoutPage-step::after {
+  content: '';
+  display: block;
+  width: 42px;
+  background-color: #aaa;
+  height: 2px;
+  position: absolute;
+  right: -40px;
+  top: 6px;
+}
+
+.CheckoutPage-step:last-child::after {
+  width: 0;
+  height: 0;
+}
+
+.CheckoutPage-active {
+  background-color: pink !important;
+}
+
+.CheckoutPage-active::after {
+  background-color: pink !important;
+}
+
+.CheckoutPage-detailWrapper {
+  background-color: white;
+  width: 800px;
+  margin: 0 auto 30px auto;
+  padding: 0 10px;
+}
+
+.CheckoutPage-itemRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+  padding: 20px 10px;
 }
